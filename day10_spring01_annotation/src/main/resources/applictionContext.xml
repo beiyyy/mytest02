@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--component-scan:开启组件扫描
+        base-package:需要扫描的路径
+        扫描该路径下的所有类是否有component注解如果有则自动创建这个类的bean对象
+    -->
+    <context:component-scan base-package="com.itheima" use-default-filters="true">
+        <!--context:exclude-filter标签:排除指定的
+            排除指定的Controller
+            注解,不扫描-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+</beans>
